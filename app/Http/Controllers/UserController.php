@@ -3,54 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
+use App\Services\Contracts\UserServiceInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function __construct(private UserServiceInterface $userService) {}
+
     public function index(Request $request): JsonResponse
     {
         $this->authorize('viewAny', User::class);
         
-        $users = User::query()
-            ->when($request->role, function ($query, $role) {
-                $query->whereHas('roles', function ($q) use ($role) {
-                    $q->where('name', $role);
-                });
-            })
-            ->paginate($request->per_page ?? 15);
+        $users = $this->userService->getAllUsers([
+            'role' => $request->role,
+            'per_page' => $request->per_page ?? 15
+        ]);
 
         return response()->json($users);
     }
 
-    public function show(User $user): JsonResponse
+    public function show(string $id): JsonResponse
     {
+        $user = $this->userService->getUserById($id);
         $this->authorize('view', $user);
-        return response()->json($user->load('roles', 'permissions'));
+        return response()->json($user);
     }
 
-    public function update(UpdateUserRequest $request, User $user): JsonResponse
+    public function update(UpdateUserRequest $request, string $id): JsonResponse
     {
+        $user = $this->userService->getUserById($id);
         $this->authorize('update', $user);
 
-        $user->update($request->validated());
-
-        if ($request->has('roles')) {
-            $user->roles()->sync($request->roles);
-        }
-
-        if ($request->has('permissions')) {
-            $user->permissions()->sync($request->permissions);
-        }
-
-        return response()->json($user->refresh()->load('roles', 'permissions'));
+        $updatedUser = $this->userService->updateUser($id, $request->validated());
+        return response()->json($updatedUser);
     }
 
-    public function destroy(User $user): JsonResponse
+    public function destroy(string $id): JsonResponse
     {
+        $user = $this->userService->getUserById($id);
         $this->authorize('delete', $user);
-        $user->delete();
+        
+        $this->userService->deleteUser($id);
         return response()->json(null, 204);
     }
 }
