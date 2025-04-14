@@ -2,11 +2,11 @@
   <div>
     <a
       class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-      href="#pablo"
+      href="#"
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
     >
-      Demo Pages
+      Sign In
     </a>
     <div
       ref="popoverDropdownRef"
@@ -17,7 +17,7 @@
       }"
     >
       <span
-        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
+        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-gray-400"
       >
         Admin Layout
       </span>
@@ -75,12 +75,12 @@
       >
         Landing
       </router-link>
-      <router-link
+      <a
         to="/profile"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Profile
-      </router-link>
+    </a>
     </div>
   </div>
 </template>
