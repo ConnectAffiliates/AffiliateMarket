@@ -12,7 +12,7 @@
           class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
           to="/"
         >
-          Vue Notus
+          Affiliate Marketing
         </a>
         <button
           class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -35,7 +35,7 @@
             >
               <i
                 class="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"></i>
-              Docs
+              About
             </a>
           </li>
         </ul>
@@ -84,10 +84,10 @@
 
           <li class="flex items-center">
             <button
-              class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+              class="bg-white text-gray-700 active:bg-gray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
               type="button"
             >
-              <i class="fas fa-arrow-alt-circle-down"></i> Download
+              <i class="fas fa-arrow-alt-circle-down"></i>Join Us
             </button>
           </li>
         </ul>

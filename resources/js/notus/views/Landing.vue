@@ -65,10 +65,10 @@
                   >
                     <i class="fas fa-award"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Awarded Agency</h6>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Divide details about your product or agency work into parts.
-                    A paragraph describing a feature will be enough.
+                  <h6 class="text-xl text-black font-semibold">Get more from your ads</h6>
+                  <p class="mt-2 mb-4 text-black">
+                    Get the most value for every impression, deliver better experiences, 
+                    and manage your entire ads business from one easy-to-use, integrated platform.
                   </p>
                 </div>
               </div>
@@ -80,14 +80,14 @@
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400"
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400"
                   >
-                    <i class="fas fa-retweet"></i>
+                  <i class="fa fa-retweet" aria-hidden="true"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Free Revisions</h6>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Keep you user engaged by providing meaningful information.
-                    Remember that by this time, the user is curious.
+                  <h6 class="text-xl text-black font-semibold">Powerful tools to grow your business.</h6>
+                  <p class="mt-2 mb-4 text-black">
+                    Our Platform offers robust tools that scale to the needs of growing businesses.
+                     Take a look at our solutions and find the right fit for you.
                   </p>
                 </div>
               </div>
@@ -101,12 +101,11 @@
                   <div
                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400"
                   >
-                    <i class="fas fa-fingerprint"></i>
+                  <i class="fab fa-resolving"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Verified Company</h6>
-                  <p class="mt-2 mb-4 text-blueGray-500">
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough. Keep you user engaged!
+                  <h6 class="text-xl text-black font-semibold">Solutions for every industry</h6>
+                  <p class="mt-2 mb-4 text-black">
+                    Our Platform can help you manage your ad business and grow your revenue in any industry.
                   </p>
                 </div>
               </div>
@@ -116,7 +115,7 @@
           <div class="flex flex-wrap items-center mt-32">
             <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
               <div
-                class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
+                class="text-gray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
               >
                 <i class="fas fa-user-friends text-xl"></i>
               </div>
@@ -126,25 +125,25 @@
               <p
                 class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
               >
-                Don't let your uses guess by attaching tooltips and popoves to
-                any element. Just make sure you enable them first via
-                JavaScript.
+              At our affiliate marketing platform, we prioritize ease, efficiency, and earning potential. 
+              Whether you're a content creator, influencer, or digital entrepreneur, our system is built to make your journey seamless.
+              From intuitive dashboards to real-time analytics, every tool is designed with your success in mind — so you can focus on promoting, referring, and earning without the hassle.
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
               >
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. Just make sure you enable them first via JavaScript.
+              We believe that great partnerships begin with great experiences. 
+              That's why our platform is not just about connecting brands and affiliates — it's about empowering both sides to grow. 
+              With transparent tracking, prompt payouts, and a support team that actually cares, working with us isn’t just business — it’s a pleasure.
               </p>
-              <router-link to="/" class="font-bold text-blueGray-700 mt-8">
-                Check Vue Notus!
-              </router-link>
+              <a to="/sign-up" class="font-bold text-blueGray-700 mt-8">
+                Advertise with us!
+              </a>
             </div>
 
             <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
               >
                 <img
                   alt="..."
@@ -163,13 +162,12 @@
                       class="text-emerald-500 fill-current"
                     ></polygon>
                   </svg>
-                  <h4 class="text-xl font-bold text-white">
+                  <h4 class="text-xl font-bold">
                     Top Notch Services
                   </h4>
                   <p class="text-md font-light mt-2 text-white">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    We pride ourselves on delivering excellent services that empower our users to succeed. 
+                    From seamless onboarding to responsive customer support, every part of our platform is built with your experience in mind.
                   </p>
                 </blockquote>
               </div>
@@ -217,9 +215,8 @@
                 </div>
                 <h3 class="text-3xl font-semibold">A growing company</h3>
                 <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                  The extension comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and you're
-                  good to go.
+                  Our Platform is designed to connect businesses with passionate affiliates who are ready to drive results. 
+                  Whether you're just getting started or you're a seasoned marketer, our platform offers a user-friendly experience that makes affiliate management simple and rewarding.
                 </p>
                 <ul class="list-none mt-6">
                   <li class="py-2">
@@ -228,12 +225,12 @@
                         <span
                           class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
                         >
-                          <i class="fas fa-fingerprint"></i>
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
                         </span>
                       </div>
                       <div>
                         <h4 class="text-blueGray-500">
-                          Carefully crafted components
+                          Real-time performance tracking
                         </h4>
                       </div>
                     </div>
@@ -244,12 +241,12 @@
                         <span
                           class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
                         >
-                          <i class="fab fa-html5"></i>
+                        <i class="fa-solid fa-link"></i>
                         </span>
                       </div>
                       <div>
                         <h4 class="text-blueGray-500">
-                          Amazing page examples
+                          Personalized referral links
                         </h4>
                       </div>
                     </div>
@@ -260,11 +257,25 @@
                         <span
                           class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
                         >
-                          <i class="far fa-paper-plane"></i>
+                        <i class="fa fa-dashboard"></i>
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">Dynamic components</h4>
+                        <h4 class="text-blueGray-500">Analytics dashboards</h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-2">
+                    <div class="flex items-center">
+                      <div>
+                        <span
+                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
+                        >
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <div>
+                        <h4 class="text-blueGray-500">Instant commission updates</h4>
                       </div>
                     </div>
                   </li>
@@ -275,7 +286,7 @@
         </div>
       </section>
 
-      <section class="pt-20 pb-48">
+      <!-- <section class="pt-20 pb-48">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap justify-center text-center mb-24">
             <div class="w-full lg:w-6/12 px-4">
@@ -438,7 +449,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="pb-20 relative block bg-blueGray-800">
         <div
@@ -465,19 +476,18 @@
           <div class="flex flex-wrap text-center justify-center">
             <div class="w-full lg:w-6/12 px-4">
               <h2 class="text-4xl font-semibold text-white">
-                Build something
+                Advertise with us
               </h2>
               <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
-                Put the potentially record low maximum sea ice extent tihs year
-                down to low ice. According to the National Oceanic and
-                Atmospheric Administration, Ted, Scambos.
+                You can easily manage their campaigns, monitor earnings, and stay informed with in-app notifications — all from one centralized hub.
+                We’re here to turn your influence into income, and your traffic into true value.
               </p>
             </div>
           </div>
           <div class="flex flex-wrap mt-12 justify-center">
             <div class="w-full lg:w-3/12 px-4 text-center">
               <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
               >
                 <i class="fas fa-medal text-xl"></i>
               </div>
@@ -485,13 +495,12 @@
                 Excelent Services
               </h6>
               <p class="mt-2 mb-4 text-blueGray-400">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                We offer seamless performance, real-time support, and features that make your experience top-tier.
               </p>
             </div>
             <div class="w-full lg:w-3/12 px-4 text-center">
               <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
               >
                 <i class="fas fa-poll text-xl"></i>
               </div>
@@ -499,13 +508,12 @@
                 Grow your market
               </h5>
               <p class="mt-2 mb-4 text-blueGray-400">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Reach more customers with ease. Use our smart tools to track, optimize, and expand your affiliate reach.
               </p>
             </div>
             <div class="w-full lg:w-3/12 px-4 text-center">
               <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
               >
                 <i class="fas fa-lightbulb text-xl"></i>
               </div>
@@ -513,8 +521,7 @@
                 Launch time
               </h5>
               <p class="mt-2 mb-4 text-blueGray-400">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Get up and running in minutes. Our platform is built for quick setup and smooth onboarding.
               </p>
             </div>
           </div>
@@ -569,12 +576,12 @@
                     >
                       Message
                     </label>
-                    <textarea
+                    <textarea>
                       rows="4"
                       cols="80"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Type a message..."
-                    />
+                    </textarea>
                   </div>
                   <div class="text-center mt-6">
                     <button

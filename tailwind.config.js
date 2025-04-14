@@ -8,6 +8,8 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.{vue,js,ts,jsx,tsx}',
+        './resources/css/**/*.css',
+        './resources/js/notus/assets/**/*.css',
     ],
     theme: {
         extend: {
