@@ -15,6 +15,7 @@ import {
 import { Bar } from 'vue-chartjs'
 
 import {ref} from "vue"
+import AdvertisersLayout from './advertisersLayout.vue'
 
 const tab = ref('overview')
 
@@ -47,6 +48,9 @@ const data = {
 const options = {
   responsive: true,
 }
+
+defineOptions({ layout: AdvertisersLayout });
+
 </script>
 
 <template>
@@ -67,7 +71,7 @@ const options = {
               <v-icon
                 variant="outlined"
                 color="primary"
-                icon="mdi-account-multiple-outline"
+                icon="mdi-currency-usd"
               ></v-icon>
             </div>
           </div>
@@ -79,7 +83,7 @@ const options = {
           </div>
           <div class="col-span-1 flex justify-end">
             <div class="bg-[var(--sec)] w-8 h-8 rounded p-2 flex justify-center items-center">
-              <v-icon variant="outlined" color="primary" icon="mdi-bank-outline"></v-icon>
+              <v-icon variant="outlined" color="primary" icon="mdi-account-multiple-outline"></v-icon>
             </div>
           </div>
         </div>
@@ -90,7 +94,7 @@ const options = {
           </div>
           <div class="col-span-1 flex justify-end">
             <div class="bg-[var(--sec)] w-8 h-8 rounded p-2 flex justify-center items-center">
-              <v-icon variant="outlined" color="primary" icon="mdi-link-variant"></v-icon>
+              <v-icon variant="outlined" color="primary" icon="mdi-cart-outline"></v-icon>
             </div>
           </div>
         </div>
@@ -101,47 +105,19 @@ const options = {
           </div>
           <div class="col-span-1 flex justify-end">
             <div class="bg-[var(--sec)] w-8 h-8 rounded p-2 flex justify-center items-center">
-              <v-icon variant="outlined" color="primary" icon="mdi-key-outline"></v-icon>
+              <v-icon variant="outlined" color="primary" icon="mdi-poll"></v-icon>
             </div>
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-5 gap-2">
+      <div class="grid grid-cols-6 gap-2">
 
-        <div class="col-span-3 border border-gray-600 px-6 py-6 rounded bg-white max-h-fit">
+        <div class="col-span-4 border border-gray-600 px-6 py-6 rounded bg-white max-h-fit">
 
-            <div class="flex flex-row gap-8 bg-gray-200 w-fit px-2 py-2 rounded">
-            <div
-            @click="tab='overview'"
-            :class="tab=='overview' ? 'bg-white px-1 rounded shadow' : ''"
-            class="cursor-pointer transition-all duration-200 ease-in"
-            >
-            Overview
-            </div>
-            <div
-            @click="tab='campaigns'"
-            :class="tab=='campaigns' ? 'bg-white px-1 rounded shadow' : ''"
-            class="cursor-pointer transition-all duration-200 ease-in"
-            >
-            Campaigns
-            </div>
-            <div
-            @click="tab='affiliateLinks'"
-            :class="tab=='affiliateLinks' ? 'bg-white px-1 rounded shadow' : ''"
-            class="cursor-pointer transition-all duration-200 ease-in"
-            >
-            Affiliate Links
-            </div>
-            <div
-            @click="tab='payouts'"
-            :class="tab=='payouts' ? 'bg-white px-1 rounded shadow' : ''"
-            class="cursor-pointer transition-all duration-200 ease-in"
-            >
-            Payouts
-            </div>
-        </div>
             
-          <div class="text-gray-900 text-lg">API Requests (Last 7 days)</div>
+           <!-- <router-view></router-view>  -->
+          <div class="text-gray-900 text-xl font-semibold">Performance Overview</div>
+          <!-- <div>Campaign performance over the last 7 months</div> -->
           <Bar :data="data" :options="options" />
         </div>
         <div class="col-span-2 border border-gray-600 px-6 py-6 rounded bg-white">

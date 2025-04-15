@@ -9,9 +9,21 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/advertiser/dashboard', function () {
     return Inertia::render('advertisers/Dashboard');
-})->name('dashboard');
+})->name('advertiser.dashboard');
+
+Route::get('/advertiser/campaigns', function () {
+    return Inertia::render('advertisers/Campaigns');
+})->name('advertiser.campaigns');
+
+Route::get('/advertiser/affiliateLinks', function () {
+    return Inertia::render('advertisers/AffiliateLinks');
+})->name('advertiser.affiliateLinks');
+
+Route::get('/advertiser/payouts', function () {
+    return Inertia::render('advertisers/Payouts');
+})->name('advertiser.payouts');
 
 Route::get('/auth', function () {
     return Inertia::render('auth/Login');
