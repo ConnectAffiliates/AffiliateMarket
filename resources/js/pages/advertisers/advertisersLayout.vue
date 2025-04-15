@@ -30,7 +30,7 @@ const drawer = ref(false)
             </Link>
             <Link :href="route('advertiser.campaigns')">
                 <v-list-item
-                    prepend-icon="mdi-chart-line-variant"
+                    prepend-icon="mdi-gift-outline"
                     title="Campaigns"
                     value="Campaigns"
                 >
@@ -63,7 +63,7 @@ const drawer = ref(false)
         </v-list>
       </v-navigation-drawer>
 
-      <v-main style="height: 100vh" class="flex flex-col">
+      <v-main style="height: 100vh" class="flex flex-col bg-gray-50">
         <v-app-bar color="white" class="elevation-0 px-4">
           <v-toolbar-title>
             <div class="text-xl font-bold text-gray-800">WingaApp</div>
