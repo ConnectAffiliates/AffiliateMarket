@@ -12,7 +12,8 @@ import { route } from 'ziggy-js'
 import { ref } from 'vue'
 
 const form = useForm({
-  name: '',
+  first_name: '',
+  last_name: '',
   email: '',
   password: '',
   password_confirmation: '',
@@ -22,6 +23,7 @@ const form = useForm({
 
 const showPassword = ref(false)
 const showPasswordConfirmation = ref(false)
+const showSuccessMessage = ref(false)
 
 const togglePasswordVisibility = (field: 'password' | 'password_confirmation') => {
   if (field === 'password') {
@@ -32,8 +34,6 @@ const togglePasswordVisibility = (field: 'password' | 'password_confirmation') =
 }
 
 const submit = () => {
-  console.log('Form submitted', form)
-  
   if (!form.terms) {
     form.setError('terms', 'You must agree to the terms and conditions')
     return
@@ -42,14 +42,14 @@ const submit = () => {
   form.post(route('register'), {
     preserveScroll: true,
     onSuccess: () => {
-      console.log('Form submission successful')
+      showSuccessMessage.value = true
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        showSuccessMessage.value = false
+      }, 5000)
     },
     onFinish: () => {
-      console.log('Form submission finished')
       form.reset('password', 'password_confirmation')
-    },
-    onError: (errors) => {
-      console.error('Form submission errors', errors)
     },
   })
 }
@@ -71,22 +71,63 @@ const submit = () => {
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div class="bg-white py-8 px-4 shadow-xl sm:rounded-lg sm:px-10">
-        <form @submit.prevent="submit">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <div class="mt-1">
-              <input
-                id="name"
-                v-model="form.name"
-                type="text"
-                required
-                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm text-gray-900"
-              />
+        <!-- Success Message -->
+        <div v-if="showSuccessMessage" class="mb-6 p-4 bg-green-50 border border-green-200 rounded-md">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
             </div>
-            <div v-if="form.errors.name" class="mt-2 text-sm text-red-600">
-              {{ form.errors.name }}
+            <div class="ml-3">
+              <p class="text-sm font-medium text-green-800">
+                Registration successful! Please check your email to verify your account.
+              </p>
+              <p class="mt-2 text-sm text-green-700">
+                <Link :href="route('login')" class="font-medium underline hover:text-green-600">
+                  Click here to login
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form @submit.prevent="submit">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="first_name" class="block text-sm font-medium text-gray-700">
+                First Name
+              </label>
+              <div class="mt-1">
+                <input
+                  id="first_name"
+                  v-model="form.first_name"
+                  type="text"
+                  required
+                  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm text-gray-900"
+                />
+              </div>
+              <div v-if="form.errors.first_name" class="mt-2 text-sm text-red-600">
+                {{ form.errors.first_name }}
+              </div>
+            </div>
+
+            <div>
+              <label for="last_name" class="block text-sm font-medium text-gray-700">
+                Last Name
+              </label>
+              <div class="mt-1">
+                <input
+                  id="last_name"
+                  v-model="form.last_name"
+                  type="text"
+                  required
+                  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm text-gray-900"
+                />
+              </div>
+              <div v-if="form.errors.last_name" class="mt-2 text-sm text-red-600">
+                {{ form.errors.last_name }}
+              </div>
             </div>
           </div>
 
@@ -106,6 +147,62 @@ const submit = () => {
             </div>
             <div v-if="form.errors.email" class="mt-2 text-sm text-red-600">
               {{ form.errors.email }}
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <label class="block text-sm font-medium text-gray-700">
+              Account Type
+            </label>
+            <div class="mt-2 grid grid-cols-2 gap-4">
+              <div>
+                <label class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none">
+                  <input
+                    type="radio"
+                    v-model="form.role"
+                    value="affiliate"
+                    class="sr-only"
+                    aria-labelledby="affiliate-label"
+                  />
+                  <span class="flex flex-1">
+                    <span class="flex flex-col">
+                      <span id="affiliate-label" class="block text-sm font-medium text-gray-900">
+                        Affiliate
+                      </span>
+                      <span class="mt-1 flex items-center text-sm text-gray-500">
+                        Promote products and earn commissions
+                      </span>
+                    </span>
+                  </span>
+                  <span class="pointer-events-none absolute -inset-px rounded-lg border-2" :class="form.role === 'affiliate' ? 'border-emerald-500' : 'border-transparent'"></span>
+                </label>
+              </div>
+
+              <div>
+                <label class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none">
+                  <input
+                    type="radio"
+                    v-model="form.role"
+                    value="advertiser"
+                    class="sr-only"
+                    aria-labelledby="advertiser-label"
+                  />
+                  <span class="flex flex-1">
+                    <span class="flex flex-col">
+                      <span id="advertiser-label" class="block text-sm font-medium text-gray-900">
+                        Advertiser
+                      </span>
+                      <span class="mt-1 flex items-center text-sm text-gray-500">
+                        Create and manage advertising campaigns
+                      </span>
+                    </span>
+                  </span>
+                  <span class="pointer-events-none absolute -inset-px rounded-lg border-2" :class="form.role === 'advertiser' ? 'border-emerald-500' : 'border-transparent'"></span>
+                </label>
+              </div>
+            </div>
+            <div v-if="form.errors.role" class="mt-2 text-sm text-red-600">
+              {{ form.errors.role }}
             </div>
           </div>
 
