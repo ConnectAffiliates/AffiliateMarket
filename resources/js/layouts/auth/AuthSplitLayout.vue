@@ -1,8 +1,20 @@
 <script setup lang="ts">
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { Link, usePage } from '@inertiajs/vue3';
+import type { PageProps as InertiaPageProps } from '@inertiajs/core';
+import { route } from 'ziggy-js';
 
-const page = usePage();
+interface Quote {
+    message: string;
+    author: string;
+}
+
+interface PageProps extends InertiaPageProps {
+    name: string;
+    quote: Quote;
+}
+
+const page = usePage<PageProps>();
 const name = page.props.name;
 const quote = page.props.quote;
 

@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <navbar />
+  <div class="font-sans antialiased">
+    <IndexNavbar />
     <main>
+      <!-- Hero Section -->
       <div
-        class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75"
+        class="relative pt-24 pb-32 flex content-center items-center justify-center min-h-screen-75"
       >
         <div
           class="absolute top-0 w-full h-full bg-center bg-cover"
@@ -13,20 +14,34 @@
         >
           <span
             id="blackOverlay"
-            class="w-full h-full absolute opacity-75 bg-black"
+            class="w-full h-full absolute opacity-75 bg-gradient-to-b from-black to-gray-900"
           ></span>
         </div>
         <div class="container relative mx-auto">
           <div class="items-center flex flex-wrap">
             <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
               <div class="pr-12">
-                <h1 class="text-white font-semibold text-5xl">
-                  Introducing Affiliate Marketing Platform.
+                <h1 class="text-white font-bold text-5xl md:text-6xl mb-6 tracking-tight">
+                  AI-Powered <span class="text-emerald-400">Affiliate Marketing</span> Platform
                 </h1>
-                <p class="mt-4 text-lg text-blueGray-200">
-                  A complete platform to grow ad revenue and protect 
-                  your brand wherever people are watching, playing or engaging.
+                <p class="mt-4 text-xl text-gray-200 leading-relaxed font-light">
+                  Connect advertisers with affiliate marketers in a performance-based ecosystem. 
+                  Create campaigns, track performance, and earn commissions automatically.
                 </p>
+                <div class="mt-10">
+                  <Link
+                    :href="route('register')"
+                    class="bg-emerald-500 text-white active:bg-emerald-600 text-base font-medium px-8 py-4 rounded-lg shadow-lg hover:shadow-xl outline-none focus:outline-none mr-4 mb-4 ease-linear transition-all duration-150 hover:bg-emerald-600 transform hover:-translate-y-1"
+                  >
+                    Get Started
+                  </Link>
+                  <a
+                    href="#features"
+                    class="bg-transparent text-white border border-white active:bg-white/10 text-base font-medium px-8 py-4 rounded-lg shadow-lg hover:shadow-xl outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 hover:bg-white/10 transform hover:-translate-y-1"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -45,30 +60,31 @@
             y="0"
           >
             <polygon
-              class="text-blueGray-200 fill-current"
+              class="text-gray-100 fill-current"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
       </div>
 
-      <section class="pb-20 bg-blueGray-200 -mt-24">
+      <!-- Features Section -->
+      <section id="features" class="pb-20 bg-gray-50 -mt-24">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap">
             <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-gradient-to-r from-red-500 to-red-600"
                   >
-                    <i class="fas fa-award"></i>
+                    <i class="fas fa-award text-2xl"></i>
                   </div>
-                  <h6 class="text-xl text-black font-semibold">Get more from your ads</h6>
-                  <p class="mt-2 mb-4 text-black">
-                    Get the most value for every impression, deliver better experiences, 
-                    and manage your entire ads business from one easy-to-use, integrated platform.
+                  <h6 class="text-xl text-gray-800 font-semibold tracking-wide">Advertiser Portal</h6>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Create and manage advertising campaigns with an intuitive interface. 
+                    Generate unique tracking links and define commission structures.
                   </p>
                 </div>
               </div>
@@ -76,552 +92,241 @@
 
             <div class="w-full md:w-4/12 px-4 text-center">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400"
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-gradient-to-r from-blue-500 to-blue-600"
                   >
-                  <i class="fa fa-retweet" aria-hidden="true"></i>
+                  <i class="fa fa-retweet text-2xl" aria-hidden="true"></i>
                   </div>
-                  <h6 class="text-xl text-black font-semibold">Powerful tools to grow your business.</h6>
-                  <p class="mt-2 mb-4 text-black">
-                    Our Platform offers robust tools that scale to the needs of growing businesses.
-                     Take a look at our solutions and find the right fit for you.
+                  <h6 class="text-xl text-gray-800 font-semibold tracking-wide">Affiliate Dashboard</h6>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Browse and select available deals with clear information on potential earnings. 
+                    Get real-time analytics and detailed performance reports.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+            <div class="w-full md:w-4/12 px-4 text-center">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400"
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-gradient-to-r from-green-500 to-green-600"
                   >
-                  <i class="fab fa-resolving"></i>
+                  <i class="fas fa-chart-line text-2xl"></i>
                   </div>
-                  <h6 class="text-xl text-black font-semibold">Solutions for every industry</h6>
-                  <p class="mt-2 mb-4 text-black">
-                    Our Platform can help you manage your ad business and grow your revenue in any industry.
+                  <h6 class="text-xl text-gray-800 font-semibold tracking-wide">Performance Tracking</h6>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Monitor affiliate link performance across various networks with robust tracking mechanisms. 
+                    Ensure transparent and accurate measurement of all metrics.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap items-center mt-32">
-            <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
-              <div
-                class="text-gray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
-              >
-                <i class="fas fa-user-friends text-xl"></i>
-              </div>
-              <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                Working with us is a pleasure
-              </h3>
-              <p
-                class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
-              >
-              At our affiliate marketing platform, we prioritize ease, efficiency, and earning potential. 
-              Whether you're a content creator, influencer, or digital entrepreneur, our system is built to make your journey seamless.
-              From intuitive dashboards to real-time analytics, every tool is designed with your success in mind — so you can focus on promoting, referring, and earning without the hassle.
-              </p>
-              <p
-                class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
-              >
-              We believe that great partnerships begin with great experiences. 
-              That's why our platform is not just about connecting brands and affiliates — it's about empowering both sides to grow. 
-              With transparent tracking, prompt payouts, and a support team that actually cares, working with us isn’t just business — it’s a pleasure.
-              </p>
-              <a to="/sign-up" class="font-bold text-blueGray-700 mt-8">
-                Advertise with us!
-              </a>
-            </div>
-
-            <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
-              <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
-              >
-                <img
-                  alt="..."
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
-                  class="w-full align-middle rounded-t-lg"
-                />
-                <blockquote class="relative p-8 mb-4">
-                  <svg
-                    preserveAspectRatio="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 583 95"
-                    class="absolute left-0 w-full block h-95-px -top-94-px"
-                  >
-                    <polygon
-                      points="-30,95 583,95 583,65"
-                      class="text-emerald-500 fill-current"
-                    ></polygon>
-                  </svg>
-                  <h4 class="text-xl font-bold">
-                    Top Notch Services
-                  </h4>
-                  <p class="text-md font-light mt-2 text-white">
-                    We pride ourselves on delivering excellent services that empower our users to succeed. 
-                    From seamless onboarding to responsive customer support, every part of our platform is built with your experience in mind.
-                  </p>
-                </blockquote>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="relative py-20">
-        <div
-          class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-          style="transform: translateZ(0);"
-        >
-          <svg
-            class="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              class="text-white fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
-
+      <!-- How It Works Section -->
+      <section class="pb-20 bg-white">
         <div class="container mx-auto px-4">
-          <div class="items-center flex flex-wrap">
-            <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-              <img
-                alt="..."
-                class="max-w-full rounded-lg shadow-lg"
-                src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-            </div>
-            <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
-              <div class="md:pr-12">
-                <div
-                  class="text-emerald-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-emerald-300"
-                >
-                  <i class="fas fa-rocket text-xl"></i>
+          <div class="flex flex-wrap items-center">
+            <div class="w-full md:w-6/12 px-4 mr-auto ml-auto">
+              <div class="justify-center flex flex-wrap relative">
+                <div class="w-full lg:w-6/12 px-4">
+                  <div class="mt-12 max-w-lg text-center mx-auto">
+                    <h3 class="text-3xl mb-2 font-semibold leading-normal text-gray-800 tracking-wide">
+                      How It Works
+                    </h3>
+                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-600">
+                      Our platform connects advertisers with affiliate marketers in a seamless ecosystem.
+                    </p>
+                  </div>
                 </div>
-                <h3 class="text-3xl font-semibold">A growing company</h3>
-                <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                  Our Platform is designed to connect businesses with passionate affiliates who are ready to drive results. 
-                  Whether you're just getting started or you're a seasoned marketer, our platform offers a user-friendly experience that makes affiliate management simple and rewarding.
-                </p>
-                <ul class="list-none mt-6">
-                  <li class="py-2">
-                    <div class="flex items-center">
-                      <div>
-                        <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <div>
-                        <h4 class="text-blueGray-500">
-                          Real-time performance tracking
-                        </h4>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-2">
-                    <div class="flex items-center">
-                      <div>
-                        <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                        <i class="fa-solid fa-link"></i>
-                        </span>
-                      </div>
-                      <div>
-                        <h4 class="text-blueGray-500">
-                          Personalized referral links
-                        </h4>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-2">
-                    <div class="flex items-center">
-                      <div>
-                        <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                        <i class="fa fa-dashboard"></i>
-                        </span>
-                      </div>
-                      <div>
-                        <h4 class="text-blueGray-500">Analytics dashboards</h4>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-2">
-                    <div class="flex items-center">
-                      <div>
-                        <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                        <i class="fa fa-refresh" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <div>
-                        <h4 class="text-blueGray-500">Instant commission updates</h4>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap mt-12">
+            <div class="w-full md:w-4/12 px-4 text-center">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600">
+                    <i class="fas fa-user-plus text-2xl"></i>
+                  </div>
+                  <h6 class="text-xl text-gray-800 font-semibold tracking-wide">1. Sign Up</h6>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Create your account as an advertiser or affiliate marketer to get started.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-4/12 px-4 text-center">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600">
+                    <i class="fas fa-link text-2xl"></i>
+                  </div>
+                  <h6 class="text-xl text-gray-800 font-semibold tracking-wide">2. Create Campaigns</h6>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Advertisers create campaigns and generate tracking links for affiliates to promote.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-4/12 px-4 text-center">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600">
+                    <i class="fas fa-money-bill-wave text-2xl"></i>
+                  </div>
+                  <h6 class="text-xl text-gray-800 font-semibold tracking-wide">3. Earn Commissions</h6>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Affiliates promote links and earn commissions based on performance metrics.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- <section class="pt-20 pb-48">
+      <!-- Benefits Section -->
+      <section class="pb-20 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="flex flex-wrap justify-center text-center mb-24">
-            <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold">Here are our heroes</h2>
-              <p class="text-lg leading-relaxed m-4 text-blueGray-500">
-                According to the National Oceanic and Atmospheric
-                Administration, Ted, Scambos, NSIDClead scentist, puts the
-                potentially record maximum.
-              </p>
-            </div>
-          </div>
           <div class="flex flex-wrap">
-            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div class="px-6">
-                <img
-                  alt="..."
-                  :src="team1"
-                  class="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Ryan Tompson</h5>
-                  <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
-                  >
-                    Web Developer
-                  </p>
-                  <div class="mt-6">
-                    <button
-                      class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-twitter"></i>
-                    </button>
-                    <button
-                      class="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-facebook-f"></i>
-                    </button>
-                    <button
-                      class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-dribbble"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div class="px-6">
-                <img
-                  alt="..."
-                  :src="team2"
-                  class="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Romina Hadid</h5>
-                  <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
-                  >
-                    Marketing Specialist
-                  </p>
-                  <div class="mt-6">
-                    <button
-                      class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-google"></i>
-                    </button>
-                    <button
-                      class="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-facebook-f"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div class="px-6">
-                <img
-                  alt="..."
-                  :src="team3"
-                  class="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Alexa Smith</h5>
-                  <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
-                  >
-                    UI/UX Designer
-                  </p>
-                  <div class="mt-6">
-                    <button
-                      class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-google"></i>
-                    </button>
-                    <button
-                      class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-twitter"></i>
-                    </button>
-                    <button
-                      class="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-instagram"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div class="px-6">
-                <img
-                  alt="..."
-                  :src="team4"
-                  class="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Jenna Kardi</h5>
-                  <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
-                  >
-                    Founder and CEO
-                  </p>
-                  <div class="mt-6">
-                    <button
-                      class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-dribbble"></i>
-                    </button>
-                    <button
-                      class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-google"></i>
-                    </button>
-                    <button
-                      class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-twitter"></i>
-                    </button>
-                    <button
-                      class="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <i class="fab fa-instagram"></i>
-                    </button>
+            <div class="w-full md:w-6/12 px-4 mr-auto ml-auto">
+              <div class="justify-center flex flex-wrap relative">
+                <div class="w-full lg:w-6/12 px-4">
+                  <div class="mt-12 max-w-lg text-center mx-auto">
+                    <h3 class="text-3xl mb-2 font-semibold leading-normal text-gray-800 tracking-wide">
+                      Benefits
+                    </h3>
+                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-600">
+                      Why choose our platform for your affiliate marketing needs?
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section> -->
-
-      <section class="pb-20 relative block bg-blueGray-800">
-        <div
-          class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-          style="transform: translateZ(0);"
-        >
-          <svg
-            class="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              class="text-blueGray-800 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
-
-        <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
-          <div class="flex flex-wrap text-center justify-center">
-            <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-white">
-                Advertise with us
-              </h2>
-              <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
-                You can easily manage their campaigns, monitor earnings, and stay informed with in-app notifications — all from one centralized hub.
-                We’re here to turn your influence into income, and your traffic into true value.
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-wrap mt-12 justify-center">
-            <div class="w-full lg:w-3/12 px-4 text-center">
-              <div
-                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-              >
-                <i class="fas fa-medal text-xl"></i>
+          <div class="flex flex-wrap mt-12">
+            <div class="w-full md:w-6/12 px-4">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="flex items-center mb-4">
+                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 mr-4">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h6 class="text-xl text-gray-800 font-semibold tracking-wide">Security & Compliance</h6>
+                  </div>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Protect user data and transaction details in compliance with applicable data privacy regulations.
+                    Our platform incorporates measures to detect and prevent fraudulent activity.
+                  </p>
+                </div>
               </div>
-              <h6 class="text-xl mt-5 font-semibold text-white">
-                Excelent Services
-              </h6>
-              <p class="mt-2 mb-4 text-blueGray-400">
-                We offer seamless performance, real-time support, and features that make your experience top-tier.
-              </p>
             </div>
-            <div class="w-full lg:w-3/12 px-4 text-center">
-              <div
-                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-              >
-                <i class="fas fa-poll text-xl"></i>
+            <div class="w-full md:w-6/12 px-4">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="flex items-center mb-4">
+                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 mr-4">
+                      <i class="fas fa-robot"></i>
+                    </div>
+                    <h6 class="text-xl text-gray-800 font-semibold tracking-wide">AI-Powered Optimization</h6>
+                  </div>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Our platform uses AI to optimize performance tracking and matching between advertisers and affiliates.
+                    Get better results with data-driven insights and recommendations.
+                  </p>
+                </div>
               </div>
-              <h5 class="text-xl mt-5 font-semibold text-white">
-                Grow your market
-              </h5>
-              <p class="mt-2 mb-4 text-blueGray-400">
-                Reach more customers with ease. Use our smart tools to track, optimize, and expand your affiliate reach.
-              </p>
             </div>
-            <div class="w-full lg:w-3/12 px-4 text-center">
-              <div
-                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-              >
-                <i class="fas fa-lightbulb text-xl"></i>
+            <div class="w-full md:w-6/12 px-4">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="flex items-center mb-4">
+                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 mr-4">
+                      <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h6 class="text-xl text-gray-800 font-semibold tracking-wide">Automated Rewards</h6>
+                  </div>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Automatically calculate commissions based on verified performance data.
+                    Facilitate secure and transparent payouts to affiliate marketers.
+                  </p>
+                </div>
               </div>
-              <h5 class="text-xl mt-5 font-semibold text-white">
-                Launch time
-              </h5>
-              <p class="mt-2 mb-4 text-blueGray-400">
-                Get up and running in minutes. Our platform is built for quick setup and smooth onboarding.
-              </p>
+            </div>
+            <div class="w-full md:w-6/12 px-4">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="flex items-center mb-4">
+                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 mr-4">
+                      <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h6 class="text-xl text-gray-800 font-semibold tracking-wide">Scalability</h6>
+                  </div>
+                  <p class="mt-2 mb-4 text-gray-600 leading-relaxed">
+                    Our platform is designed to accommodate a growing user base and increasing campaign volume.
+                    Scale your affiliate marketing efforts without worrying about technical limitations.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="relative block py-24 lg:pt-0 bg-blueGray-800">
+
+      <!-- CTA Section -->
+      <section class="pb-20 bg-gradient-to-r from-emerald-600 to-emerald-800">
         <div class="container mx-auto px-4">
-          <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
-            <div class="w-full lg:w-6/12 px-4">
-              <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200"
-              >
-                <div class="flex-auto p-5 lg:p-10">
-                  <h4 class="text-2xl font-semibold">
-                    Want to work with us?
-                  </h4>
-                  <p class="leading-relaxed mt-1 mb-4 text-blueGray-500">
-                    Complete this form and we will get back to you in 24 hours.
-                  </p>
-                  <div class="relative w-full mb-3 mt-8">
-                    <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="full-name"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Full Name"
-                    />
-                  </div>
-
-                  <div class="relative w-full mb-3">
-                    <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="email"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Email"
-                    />
-                  </div>
-
-                  <div class="relative w-full mb-3">
-                    <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="message"
-                    >
-                      Message
-                    </label>
-                    <textarea>
-                      rows="4"
-                      cols="80"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                      placeholder="Type a message..."
-                    </textarea>
-                  </div>
-                  <div class="text-center mt-6">
-                    <button
-                      class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </div>
+          <div class="flex flex-wrap items-center">
+            <div class="w-full md:w-8/12 px-4 mr-auto ml-auto text-center">
+              <h3 class="text-3xl mb-2 font-semibold leading-normal text-white tracking-wide">
+                Ready to get started?
+              </h3>
+              <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-white">
+                Join our platform today and start growing your business with affiliate marketing.
+              </p>
+              <div class="mt-10">
+                <Link
+                  :href="route('register')"
+                  class="bg-white text-emerald-600 active:bg-gray-100 text-base font-medium px-8 py-4 rounded-lg shadow-lg hover:shadow-xl outline-none focus:outline-none mr-4 mb-4 ease-linear transition-all duration-150 hover:bg-gray-50 transform hover:-translate-y-1"
+                >
+                  Create Account
+                </Link>
+                <Link
+                  :href="route('login')"
+                  class="bg-transparent text-white border border-white active:bg-emerald-700 text-base font-medium px-8 py-4 rounded-lg shadow-lg hover:shadow-xl outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 hover:bg-emerald-700 transform hover:-translate-y-1"
+                >
+                  Sign In
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer-component />
+    <footer class="relative bg-gray-100 pt-8 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap items-center md:justify-between justify-center">
+          <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+            <div class="text-sm text-gray-600 py-1">
+              © 2024 Affiliate Market. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
-<script>
-import Navbar from "@/notus/components/Navbars/AuthNavbar.vue";
-import FooterComponent from "@/notus/components/Footers/Footer.vue";
 
-import team1 from "@/notus/assets/img/team-1-800x800.jpg";
-import team2 from "@/notus/assets/img/team-2-800x800.jpg";
-import team3 from "@/notus/assets/img/team-3-800x800.jpg";
-import team4 from "@/notus/assets/img/team-4-470x470.png";
-
-export default {
-  data() {
-    return {
-      team1,
-      team2,
-      team3,
-      team4,
-    };
-  },
-  components: {
-    Navbar,
-    FooterComponent,
-  },
-};
+<script setup lang="ts">
+import IndexNavbar from '../components/Navbars/IndexNavbar.vue'
+import { Link } from '@inertiajs/vue3'
 </script>

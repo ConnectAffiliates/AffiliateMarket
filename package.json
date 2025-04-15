@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.7.2",
+        "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^2.0.0-beta.3",
         "@popperjs/core": "^2.11.8",
         "@vitejs/plugin-vue": "^5.2.1",
@@ -37,6 +38,7 @@
         "laravel-vite-plugin": "^1.0",
         "lucide": "^0.468.0",
         "lucide-vue-next": "^0.468.0",
+        "radix-vue": "^1.9.17",
         "reka-ui": "^2.0.0",
         "tailwind-merge": "^2.5.5",
         "tailwindcss": "^3.4.1",
@@ -44,7 +46,7 @@
         "typescript": "^5.2.2",
         "vite": "^6.2.0",
         "vue": "^3.5.13",
-        "ziggy-js": "^2.4.2"
+        "ziggy-js": "^2.5.2"
     },
     "optionalDependencies": {
         "@rollup/rollup-linux-x64-gnu": "4.9.5",

@@ -30,14 +30,11 @@
             <hr class="mt-6 border-b-1 border-blueGray-300" />
           </div>
           <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-            <div class="text-blueGray-400 text-center mb-3 font-bold">
-              <small>Or sign in with credentials</small>
-            </div>
-            <form>
+            <form @submit.prevent="submit">
               <div class="relative w-full mb-3">
                 <label
                   class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  htmlFor="grid-password"
+                  for="grid-password"
                 >
                   Email
                 </label>
@@ -45,13 +42,15 @@
                   type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Email"
+                  v-model="form.email"
                 />
+                <InputError :message="form.errors.email" class="mt-2" />
               </div>
 
               <div class="relative w-full mb-3">
                 <label
                   class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  htmlFor="grid-password"
+                  for="grid-password"
                 >
                   Password
                 </label>
@@ -59,26 +58,18 @@
                   type="password"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Password"
+                  v-model="form.password"
                 />
-              </div>
-              <div>
-                <label class="inline-flex items-center cursor-pointer">
-                  <input
-                    id="customCheckLogin"
-                    type="checkbox"
-                    class="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
-                  />
-                  <span class="ml-2 text-sm font-semibold text-blueGray-600">
-                    Remember me
-                  </span>
-                </label>
+                <InputError :message="form.errors.password" class="mt-2" />
               </div>
 
               <div class="text-center mt-6">
                 <button
                   class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                  type="button"
+                  type="submit"
+                  :disabled="form.processing"
                 >
+                  <LoaderCircle v-if="form.processing" class="mr-2 h-4 w-4 animate-spin" />
                   Sign In
                 </button>
               </div>
@@ -92,25 +83,35 @@
             </a>
           </div>
           <div class="w-1/2 text-right">
-            <router-link to="/auth/register" class="text-blueGray-200">
+            <Link :href="route('register')" class="text-blueGray-200">
               <small>Create new account</small>
-            </router-link>
+            </Link>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script>
-import github from "@/assets/img/github.svg";
-import google from "@/assets/img/google.svg";
 
-export default {
-  data() {
-    return {
-      github,
-      google,
-    };
-  },
-};
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Link, useForm } from '@inertiajs/vue3'
+import { LoaderCircle } from 'lucide-vue-next'
+import InputError from '@/components/InputError.vue'
+import github from "@/assets/img/github.svg"
+import google from "@/assets/img/google.svg"
+
+const form = useForm({
+  email: '',
+  password: '',
+  remember: false,
+})
+
+const submit = () => {
+  form.post(route('login'), {
+    onFinish: () => {
+      form.reset('password')
+    },
+  })
+}
 </script>

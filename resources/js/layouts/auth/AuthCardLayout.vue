@@ -2,6 +2,7 @@
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from '@inertiajs/vue3';
+import { route } from 'ziggy-js';
 
 defineProps<{
     title?: string;

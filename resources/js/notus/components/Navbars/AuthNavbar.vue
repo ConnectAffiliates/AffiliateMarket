@@ -8,12 +8,12 @@
       <div
         class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
       >
-        <a
+        <Link
           class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-          to="/"
+          href="/"
         >
           Affiliate Marketing
-        </a>
+        </Link>
         <button
           class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
           type="button"
@@ -83,12 +83,12 @@
           </li>
 
           <li class="flex items-center">
-            <button
+            <router-link
               class="bg-white text-gray-700 active:bg-gray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-              type="button"
+              to="/register"
             >
               <i class="fas fa-arrow-alt-circle-down"></i>Join Us
-            </button>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -97,6 +97,8 @@
 </template>
 <script>
 import PagesDropdown from "@/notus/components/Dropdowns/PagesDropdown.vue";
+import { Link } from '@inertiajs/vue3';
+
 export default {
   data() {
     return {
@@ -110,6 +112,7 @@ export default {
   },
   components: {
     PagesDropdown,
+    Link,
   },
 };
 </script>

@@ -17,48 +17,18 @@
       }"
     >
       <span
-        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-gray-400"
-      >
-        Admin Layout
-      </span>
-      <router-link
-        to="/admin/dashboard"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-      >
-        Dashboard
-      </router-link>
-      <router-link
-        to="/admin/settings"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-      >
-        Settings
-      </router-link>
-      <router-link
-        to="/admin/tables"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-      >
-        Tables
-      </router-link>
-      <router-link
-        to="/admin/maps"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-      >
-        Maps
-      </router-link>
-      <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-      <span
         class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        Auth Layout
+        Authentication
       </span>
       <router-link
-        to="/auth/login"
+        to="/login"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Login
       </router-link>
       <router-link
-        to="/auth/register"
+        to="/register"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Register
@@ -67,20 +37,14 @@
       <span
         class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        No Layout
+        Pages
       </span>
       <router-link
-        to="/landing"
+        to="/"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Landing
+        Home
       </router-link>
-      <a
-        to="/profile"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-      >
-        Profile
-    </a>
     </div>
   </div>
 </template>
