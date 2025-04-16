@@ -13,6 +13,30 @@ Route::get('/about', function () {
     return Inertia::render('About');
 });
 
+Route::get('/advertiser/dashboard', function () {
+    return Inertia::render('advertisers/Dashboard');
+})->name('advertiser.dashboard');
+
+Route::get('/advertiser/campaigns', function () {
+    return Inertia::render('advertisers/Campaigns');
+})->name('advertiser.campaigns');
+
+Route::get('/advertiser/affiliateLinks', function () {
+    return Inertia::render('advertisers/AffiliateLinks');
+})->name('advertiser.affiliateLinks');
+
+Route::get('/advertiser/payouts', function () {
+    return Inertia::render('advertisers/Payouts');
+})->name('advertiser.payouts');
+
+Route::get('/auth', function () {
+    return Inertia::render('auth/Login');
+});
+
+Route::get('/login', function () {
+    return Inertia::render('Register');
+});
+
 // Database Test Route (for debugging)
 Route::get('/test-db', function() {
     try {
