@@ -1,12 +1,12 @@
 <template>
   <div>
     <a
-      class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-      href="#pablo"
+      class="hover:text-gray-500 text-gray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+      href="#"
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
     >
-      Demo Pages
+      Sign In
     </a>
     <div
       ref="popoverDropdownRef"
