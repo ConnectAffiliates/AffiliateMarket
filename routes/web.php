@@ -9,6 +9,10 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About');
+});
+
 // Database Test Route (for debugging)
 Route::get('/test-db', function() {
     try {
