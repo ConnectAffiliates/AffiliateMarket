@@ -20,10 +20,10 @@
           <div class="items-center flex flex-wrap">
             <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
               <div class="pr-12">
-                <h1 class="text-white font-semibold text-5xl">
+                <h1 class="text-gray-100 font-semibold text-5xl">
                   Introducing Affiliate Marketing Platform.
                 </h1>
-                <p class="mt-4 text-lg text-blueGray-200">
+                <p class="mt-4 text-lg text-gray-200">
                   A complete platform to grow ad revenue and protect 
                   your brand wherever people are watching, playing or engaging.
                 </p>
@@ -44,15 +44,13 @@
             x="0"
             y="0"
           >
-            <polygon
-              class="text-blueGray-200 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
+            <polygon class="text-gray-200 fill-current"
+            points="2560 0 2560 100 0 100"></polygon>
           </svg>
         </div>
       </div>
 
-      <section class="pb-20 bg-blueGray-200 -mt-24">
+      <section class="pb-20 bg-gray-200 -mt-24">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap">
             <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -65,8 +63,8 @@
                   >
                     <i class="fas fa-award"></i>
                   </div>
-                  <h6 class="text-xl text-black font-semibold">Get more from your ads</h6>
-                  <p class="mt-2 mb-4 text-black">
+                  <h6 class="text-xl text-gray-800 font-semibold">Get more from your ads</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
                     Get the most value for every impression, deliver better experiences, 
                     and manage your entire ads business from one easy-to-use, integrated platform.
                   </p>
@@ -84,8 +82,8 @@
                   >
                   <i class="fa fa-retweet" aria-hidden="true"></i>
                   </div>
-                  <h6 class="text-xl text-black font-semibold">Powerful tools to grow your business.</h6>
-                  <p class="mt-2 mb-4 text-black">
+                  <h6 class="text-xl text-gray-800 font-semibold">Powerful tools to grow your business.</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
                     Our Platform offers robust tools that scale to the needs of growing businesses.
                      Take a look at our solutions and find the right fit for you.
                   </p>
@@ -103,8 +101,8 @@
                   >
                   <i class="fab fa-resolving"></i>
                   </div>
-                  <h6 class="text-xl text-black font-semibold">Solutions for every industry</h6>
-                  <p class="mt-2 mb-4 text-black">
+                  <h6 class="text-xl text-gray-800 font-semibold">Solutions for every industry</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
                     Our Platform can help you manage your ad business and grow your revenue in any industry.
                   </p>
                 </div>
@@ -115,28 +113,28 @@
           <div class="flex flex-wrap items-center mt-32">
             <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
               <div
-                class="text-gray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
+                class="text-gray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full"
               >
                 <i class="fas fa-user-friends text-xl"></i>
               </div>
-              <h3 class="text-3xl mb-2 font-semibold leading-normal">
+              <h3 class="text-3xl text-gray-800 mb-2 font-semibold leading-normal">
                 Working with us is a pleasure
               </h3>
               <p
-                class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
+                class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-600"
               >
               At our affiliate marketing platform, we prioritize ease, efficiency, and earning potential. 
               Whether you're a content creator, influencer, or digital entrepreneur, our system is built to make your journey seamless.
               From intuitive dashboards to real-time analytics, every tool is designed with your success in mind — so you can focus on promoting, referring, and earning without the hassle.
               </p>
               <p
-                class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-600"
               >
               We believe that great partnerships begin with great experiences. 
               That's why our platform is not just about connecting brands and affiliates — it's about empowering both sides to grow. 
               With transparent tracking, prompt payouts, and a support team that actually cares, working with us isn’t just business — it’s a pleasure.
               </p>
-              <a to="/sign-up" class="font-bold text-blueGray-700 mt-8">
+              <a to="/sign-up" class="font-bold text-gray-700 mt-8">
                 Advertise with us!
               </a>
             </div>
@@ -157,15 +155,15 @@
                     viewBox="0 0 583 95"
                     class="absolute left-0 w-full block h-95-px -top-94-px"
                   >
-                    <polygon
+                    <!-- <polygon
                       points="-30,95 583,95 583,65"
                       class="text-emerald-500 fill-current"
-                    ></polygon>
+                    ></polygon> -->
                   </svg>
-                  <h4 class="text-xl font-bold">
+                  <h4 class="text-xl text-gray-800 font-bold">
                     Top Notch Services
                   </h4>
-                  <p class="text-md font-light mt-2 text-white">
+                  <p class="text-md font-light mt-2 text-gray-600">
                     We pride ourselves on delivering excellent services that empower our users to succeed. 
                     From seamless onboarding to responsive customer support, every part of our platform is built with your experience in mind.
                   </p>
@@ -191,7 +189,7 @@
             y="0"
           >
             <polygon
-              class="text-white fill-current"
+              class="text-black fill-current"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
@@ -214,7 +212,7 @@
                   <i class="fas fa-rocket text-xl"></i>
                 </div>
                 <h3 class="text-3xl font-semibold">A growing company</h3>
-                <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
+                <p class="mt-4 text-lg leading-relaxed text-gray-500">
                   Our Platform is designed to connect businesses with passionate affiliates who are ready to drive results. 
                   Whether you're just getting started or you're a seasoned marketer, our platform offers a user-friendly experience that makes affiliate management simple and rewarding.
                 </p>
@@ -229,7 +227,7 @@
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">
+                        <h4 class="text-gray-500">
                           Real-time performance tracking
                         </h4>
                       </div>
@@ -245,7 +243,7 @@
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">
+                        <h4 class="text-gray-500">
                           Personalized referral links
                         </h4>
                       </div>
@@ -261,7 +259,7 @@
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">Analytics dashboards</h4>
+                        <h4 class="text-gray-500">Analytics dashboards</h4>
                       </div>
                     </div>
                   </li>
@@ -275,7 +273,7 @@
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">Instant commission updates</h4>
+                        <h4 class="text-gray-500">Instant commission updates</h4>
                       </div>
                     </div>
                   </li>
@@ -451,7 +449,7 @@
         </div>
       </section> -->
 
-      <section class="pb-20 relative block bg-blueGray-800">
+      <section class="pb-20 relative block bg-gray-800">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style="transform: translateZ(0);"
@@ -466,7 +464,7 @@
             y="0"
           >
             <polygon
-              class="text-blueGray-800 fill-current"
+              class="text-gray-800 fill-current"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
@@ -527,65 +525,64 @@
           </div>
         </div>
       </section>
-      <section class="relative block py-24 lg:pt-0 bg-blueGray-800">
+      <section class="relative block py-24 lg:pt-0 bg-gray-800">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
             <div class="w-full lg:w-6/12 px-4">
               <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200"
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200"
               >
                 <div class="flex-auto p-5 lg:p-10">
-                  <h4 class="text-2xl font-semibold">
+                  <h4 class="text-2xl text-gray-800 font-semibold">
                     Want to work with us?
                   </h4>
-                  <p class="leading-relaxed mt-1 mb-4 text-blueGray-500">
+                  <p class="leading-relaxed mt-1 mb-4 text-gray-800">
                     Complete this form and we will get back to you in 24 hours.
                   </p>
                   <div class="relative w-full mb-3 mt-8">
                     <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      class="block uppercase text-gray-800 text-xs font-bold mb-2"
                       htmlFor="full-name"
                     >
                       Full Name
                     </label>
                     <input
                       type="text"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Full Name"
                     />
                   </div>
 
                   <div class="relative w-full mb-3">
                     <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      class="block uppercase text-gray-800 text-xs font-bold mb-2"
                       htmlFor="email"
                     >
                       Email
                     </label>
                     <input
                       type="email"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
                     />
                   </div>
 
                   <div class="relative w-full mb-3">
                     <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      class="block uppercase text-gray-800 text-xs font-bold mb-2"
                       htmlFor="message"
                     >
                       Message
                     </label>
-                    <textarea>
-                      rows="4"
+                    <textarea rows="4"
                       cols="80"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                      placeholder="Type a message..."
+                      class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                      placeholder="Type a message...">
                     </textarea>
                   </div>
                   <div class="text-center mt-6">
                     <button
-                      class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      class="bg-gray-800 text-white active:bg-gray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
                     >
                       Send Message

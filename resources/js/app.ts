@@ -24,7 +24,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 //     }
 // }
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'Affiliate-Marketing';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
