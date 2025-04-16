@@ -10,9 +10,9 @@ const drawer = ref(false)
     <v-layout>
       <v-navigation-drawer width="300" class="bg-[var(--pri)]" color="primary" expand-on-hover rail>
         <v-list>
-          <v-list-item prepend-icon="mdi-lan-connect" title="WingaApp">
+          <v-list-item prepend-icon="mdi-lan-connect" title="Affiliate Marketing">
             <template v-slot:title>
-              <span class="text-xl font-bold">WingaApp</span>
+              <span class="text-xl font-bold">Affiliate Marketing</span>
             </template>
           </v-list-item>
         </v-list>
@@ -77,7 +77,7 @@ const drawer = ref(false)
 
           <v-btn color="primary" icon="mdi-logout" title="Logout" variant="outlined"></v-btn>
         </v-app-bar>
-        <div class="h-full w-full">
+        <div class="h-full w-full overflow-y-auto">
           <!-- <router-view></router-view> -->
            <slot/>
         </div>
