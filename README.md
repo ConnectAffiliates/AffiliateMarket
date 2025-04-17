@@ -4,7 +4,7 @@ A modern Affiliate Marketing Platform built with Laravel, Vite, Vue 3, and Tailw
 
 ## 🚀 Features
 
--Landing page
+- Landing page
 - User registration and login system
 - Affiliate dashboard with referral tracking
 - Campaign & link management
@@ -28,7 +28,7 @@ A modern Affiliate Marketing Platform built with Laravel, Vite, Vue 3, and Tailw
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/affiliate-marketing-platform.git
+git clone https://github.com/ConnectAffiliates/AffiliateMarket.git
 
 cd affiliate-marketing-platform
 
