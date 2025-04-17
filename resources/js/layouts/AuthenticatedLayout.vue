@@ -1,11 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { Link, usePage } from '@inertiajs/vue3'
 import { PageProps } from '@/types'
 
 const showingNavigationDropdown = ref(false)
 
-const user = usePage<{ auth: { user: any } }>().props.auth.user
+const user = usePage<{ auth: { user: { id: string, first_name: string, last_name: string, email: string, roles: { name: string }[] } } }>().props.auth.user
+
+// Determine the dashboard route name based on the first role
+const dashboardRouteName = computed(() => {
+  if (!user || !user.roles || user.roles.length === 0) {
+    return 'dashboard'; // Fallback or default dashboard
+  }
+  const roleName = user.roles[0].name;
+  switch (roleName) {
+    case 'admin':
+      return 'admin.dashboard';
+    case 'advertiser':
+      return 'advertiser.dashboard';
+    case 'affiliate':
+      return 'affiliate.dashboard';
+    default:
+      return 'dashboard'; // Fallback
+  }
+});
 </script>
 
 <template>
@@ -22,9 +40,9 @@ const user = usePage<{ auth: { user: any } }>().props.auth.user
 
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
               <Link
-                :href="route(user.role === 'advertiser' ? 'advertiser.dashboard' : 'publisher.dashboard')"
+                :href="route(dashboardRouteName)"
                 class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
-                :class="{ 'border-emerald-500 text-gray-900': route().current(user.role === 'advertiser' ? 'advertiser.dashboard' : 'publisher.dashboard') }"
+                :class="{ 'border-emerald-500 text-gray-900': route().current(dashboardRouteName) }"
               >
                 Dashboard
               </Link>
@@ -78,9 +96,9 @@ const user = usePage<{ auth: { user: any } }>().props.auth.user
       <div :class="{ 'block': showingNavigationDropdown, 'hidden': !showingNavigationDropdown }" class="sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
           <Link
-            :href="route(user.role === 'advertiser' ? 'advertiser.dashboard' : 'publisher.dashboard')"
+            :href="route(dashboardRouteName)"
             class="block w-full pl-3 pr-4 py-2 border-l-4 border-transparent text-left text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out"
-            :class="{ 'border-emerald-500 text-emerald-700 bg-emerald-50 focus:text-emerald-800 focus:bg-emerald-50 focus:border-emerald-700': route().current(user.role === 'advertiser' ? 'advertiser.dashboard' : 'publisher.dashboard') }"
+            :class="{ 'border-emerald-500 text-emerald-700 bg-emerald-50 focus:text-emerald-800 focus:bg-emerald-50 focus:border-emerald-700': route().current(dashboardRouteName) }"
           >
             Dashboard
           </Link>

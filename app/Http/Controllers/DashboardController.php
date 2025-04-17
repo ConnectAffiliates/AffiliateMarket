@@ -11,6 +11,10 @@ class DashboardController extends Controller
     {
         $user = $request->user();
 
+        if ($user->hasRole('admin')) {
+            return redirect()->route('admin.dashboard');
+        }
+
         if ($user->hasRole('advertiser')) {
             return redirect()->route('advertiser.dashboard');
         }
@@ -19,7 +23,7 @@ class DashboardController extends Controller
             return redirect()->route('affiliate.dashboard');
         }
 
-        // Fallback to affiliate dashboard if no role is set
-        return redirect()->route('affiliate.dashboard');
+        // If no role is set, redirect to home
+        return redirect()->route('home');
     }
 } 

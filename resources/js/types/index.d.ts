@@ -27,11 +27,11 @@ export interface SharedData extends PageProps {
 }
 
 export interface User {
-    id: string;
+    id: number;
+    email: string;
     first_name: string;
     last_name: string;
-    email: string;
-    role: 'advertiser' | 'publisher';
+    role: 'advertiser' | 'affiliate' | 'admin';
 }
 
 export interface PageProps {

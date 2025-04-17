@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -44,24 +45,29 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
-            'id' => (string) \Illuminate\Support\Str::uuid(),
+            'id' => (string) Str::uuid(),
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'role' => $request->role,
             'password' => Hash::make($request->password),
             'is_active' => true,
         ]);
+
+        // Find the role by name and assign it to the user
+        $role = Role::where('name', $request->role)->first();
+        if ($role) {
+            $user->assignRole($role);
+        }
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        // Check if dashboard route exists, otherwise redirect to home
-        if (Route::has('dashboard')) {
-            return redirect()->intended(route('dashboard'));
+        // Redirect to role-specific dashboard
+        if ($user->hasRole('advertiser')) {
+            return redirect()->intended(route('advertiser.dashboard'));
         }
         
-        return redirect()->intended(route('home'));
+        return redirect()->intended(route('affiliate.dashboard'));
     }
 }

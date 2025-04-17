@@ -11,18 +11,27 @@ use App\Services\Contracts\UserServiceInterface;
 use App\Services\Contracts\RoleServiceInterface;
 use App\Services\Contracts\PermissionServiceInterface;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Permission\PermissionServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function register()
+    /**
+     * Register any application services.
+     */
+    public function register(): void
     {
+        $this->app->register(PermissionServiceProvider::class);
+        
         $this->app->bind(AuthServiceInterface::class, AuthService::class);
         $this->app->bind(UserServiceInterface::class, UserService::class);
         $this->app->bind(RoleServiceInterface::class, RoleService::class);
         $this->app->bind(PermissionServiceInterface::class, PermissionService::class);
     }
 
-    public function boot()
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
     {
         //
     }
