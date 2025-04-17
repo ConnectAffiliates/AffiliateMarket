@@ -47,3 +47,40 @@ php artisan migrate
 
 # Compile assets
 npm run dev
+```
+
+## ⚙️ Configuration
+
+- Configure your .env file with correct DB, MAIL, and other settings.
+- Set up your Vite config if customizing the front end.
+
+## 🧪 Running the Project
+
+```bash
+php artisan serve
+```
+
+## 📁 Folder Structure Highlights
+
+- app/Http/Controllers – Core controllers for user and affiliate logic
+
+- resources/js/ – Vue components and JavaScript logic
+
+- resources/views/ – Blade templates and layout views
+
+- public/ – Public assets and entry point
+
+- tailwind.config.js – TailwindCSS configuration
+
+- vite.config.js – Vite bundler setup
+
+  ## 🤝 Contributing
+  
+  Feel free to fork this repository, raise issues, or submit PRs for improvements.
+
+  ## 📄 License
+  
+  This project is open-sourced under the MIT license.
+
+  Built with ❤️ by ByteForce
+
