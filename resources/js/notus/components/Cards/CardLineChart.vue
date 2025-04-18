@@ -28,7 +28,7 @@ import Chart from "chart.js";
 export default {
   mounted: function () {
     this.$nextTick(function () {
-      var config = {
+      const config = {
         type: "line",
         data: {
           labels: [
@@ -128,7 +128,7 @@ export default {
           },
         },
       };
-      var ctx = document.getElementById("line-chart").getContext("2d");
+      const ctx = document.getElementById("line-chart").getContext("2d");
       window.myLine = new Chart(ctx, config);
     });
   },

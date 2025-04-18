@@ -30,14 +30,20 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: async (name) => {
-        // Try to resolve from pages directory first
+        // Try to resolve from pages directory first (lowercase)
         try {
             const page = await resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')) as any;
             return page.default || page;
         } catch (e) {
-            // If not found in pages, try to resolve from notus/views directory
-            const notusPage = await resolvePageComponent(`./notus/views/${name}.vue`, import.meta.glob('./notus/views/**/*.vue')) as any;
-            return notusPage.default || notusPage;
+            // If not found, try to resolve from Pages directory (uppercase)
+            try {
+                const page = await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')) as any;
+                return page.default || page;
+            } catch (e) {
+                // If not found in either pages or Pages, try to resolve from notus/views directory
+                const notusPage = await resolvePageComponent(`./notus/views/${name}.vue`, import.meta.glob('./notus/views/**/*.vue')) as any;
+                return notusPage.default || notusPage;
+            }
         }
     },
     setup({ el, App, props, plugin }) {

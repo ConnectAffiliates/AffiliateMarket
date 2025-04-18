@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import AppLogoIcon from '@/components/AppLogoIcon.vue';
+// Removed AppLogoIcon import as we're using an image now
 </script>
 
 <template>
-    <div class="flex aspect-square size-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
-        <AppLogoIcon class="size-5 fill-current text-white dark:text-black" />
-    </div>
-    <div class="ml-1 grid flex-1 text-left text-sm">
-        <span class="mb-0.5 truncate font-semibold leading-none">Laravel Starter Kit</span>
+    <div class="flex items-center">
+        <img src="/images/byteforce-logo.jpg" alt="ByteForce Logo" class="h-8 w-auto" />
+        <div class="ml-1 grid flex-1 text-left text-sm">
+            <span class="mb-0.5 truncate font-semibold leading-none">ByteForce</span>
+        </div>
     </div>
 </template>

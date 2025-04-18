@@ -6,7 +6,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Make all input text black for better visibility */
+@layer components {
+    input,
+    textarea,
+    select,
+    .v-field__input {
+        color: black !important;
+    }
+    
+    .v-select__selection,
+    .v-text-field input,
+    .v-textarea textarea {
+        color: black !important;
+    }
+}
 
 body,
 html {

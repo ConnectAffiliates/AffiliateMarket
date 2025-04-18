@@ -19,8 +19,8 @@ const user = usePage<{ auth: { user: { id: string, first_name: string, last_name
         <div class="flex flex-col h-0 flex-1 bg-white border-r border-gray-200">
           <div class="flex items-center h-16 flex-shrink-0 px-4 bg-indigo-700">
             <Link :href="route('home')" class="flex items-center">
-              <img class="h-8 w-auto" src="/logo.svg" alt="Logo" />
-              <span class="ml-2 text-white font-semibold text-lg">AffiliateMarket</span>
+              <img class="h-8 w-auto" src="/images/byteforce-logo.jpg" alt="ByteForce Logo" />
+              <span class="ml-2 text-white font-semibold text-lg">ByteForce</span>
             </Link>
           </div>
           <div class="flex-1 flex flex-col overflow-y-auto">
