@@ -124,9 +124,9 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
   <AdvertiserLayout>
     <template #header>
       <div class="px-4 sm:px-0">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
           Overview Dashboard
-        </h2>
+      </h2>
         <p class="mt-1 text-sm text-gray-600">Track your business performance and affiliate sales</p>
       </div>
     </template>
@@ -416,7 +416,7 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
       </div>
     </div>
   </AdvertiserLayout>
-</template>
+</template> 
 
 <style>
 /* Add any custom styles here if needed */

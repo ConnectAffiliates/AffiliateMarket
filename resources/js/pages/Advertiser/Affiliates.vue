@@ -13,19 +13,19 @@ const searchQuery = ref('')
 const filterStatus = ref('all')
 
 const affiliates = ref([
-  { 
-    id: 1, 
+    {
+        id: 1,
     name: 'Amina Said', 
     email: 'amina@example.com', 
     phone: '+255 712 345 678',
     joined_date: '2023-03-15',
-    campaigns: 3,
+        campaigns: 3,
     total_sales: 'TZS 850,000',
     commission_paid: 'TZS 85,000',
     status: 'active'
-  },
-  { 
-    id: 2, 
+    },
+    {
+        id: 2,
     name: 'John Mbwana', 
     email: 'john@example.com', 
     phone: '+255 756 789 012',
@@ -52,7 +52,7 @@ const affiliates = ref([
     email: 'david@example.com', 
     phone: '+255 732 567 890',
     joined_date: '2023-01-10',
-    campaigns: 0,
+        campaigns: 0,
     total_sales: 'TZS 0',
     commission_paid: 'TZS 0',
     status: 'inactive'
@@ -88,7 +88,7 @@ const inviteAffiliate = () => {
   <Head title="Affiliates" />
 
   <AdvertiserLayout>
-    <template #header>
+        <template #header>
       <div class="flex justify-between items-center px-4 sm:px-0">
         <div>
           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -100,10 +100,10 @@ const inviteAffiliate = () => {
           @click="inviteAffiliate"
           class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Invite Affiliate
+                    Invite Affiliate
         </button>
-      </div>
-    </template>
+            </div>
+        </template>
 
     <div class="bg-white shadow-sm rounded-lg overflow-hidden">
       <!-- Filters -->
@@ -116,7 +116,7 @@ const inviteAffiliate = () => {
                 <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                 </svg>
-              </div>
+                                        </div>
               <input
                 id="search"
                 v-model="searchQuery"
@@ -137,7 +137,7 @@ const inviteAffiliate = () => {
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
             </select>
-          </div>
+            </div>
         </div>
       </div>
       

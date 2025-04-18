@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tracking_methods', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('campaign_id');
+            $table->uuid('campaign_id');
             $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
             $table->enum('type', ['unique_link', 'referral_code', 'qr_code', 'phone_call', 'social_media', 'visit_verification']);
             $table->string('tracking_code')->unique();

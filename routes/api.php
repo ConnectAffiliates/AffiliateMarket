@@ -17,7 +17,7 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('users', UserController::class)->except(['store']);
     
     // Admin-only routes
-    Route::middleware('role:admin')->group(function () {
+    Route::middleware(\App\Http\Middleware\CheckUserRole::class . ':admin')->group(function () {
         Route::post('/users/{user}/assign-role', [UserController::class, 'assignRole']);
         Route::post('/users/{user}/remove-role', [UserController::class, 'removeRole']);
     });

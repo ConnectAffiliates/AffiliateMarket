@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('verification_methods', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('campaign_id');
+            $table->uuid('campaign_id');
             $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
             $table->enum('type', ['online_purchase', 'physical_visit', 'phone_call', 'social_media_engagement', 'manual_verification']);
             $table->json('verification_criteria')->nullable();

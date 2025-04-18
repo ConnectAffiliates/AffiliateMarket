@@ -7,76 +7,126 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { CheckCircle, XCircle, Clock, AlertCircle } from 'lucide-vue-next';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { router } from '@inertiajs/vue3';
 
-interface Sale {
-    id: number;
-    date: string;
-    affiliate: string;
-    customer: string;
-    campaign: string;
-    amount: number;
-    commission: number;
-    status: 'pending' | 'approved' | 'rejected' | 'flagged';
-    referral_code: string;
+interface Props {
+    sales: Array<{
+        id: string;
+        date: string;
+        affiliate: {
+            id: string;
+            first_name: string;
+            last_name: string;
+        };
+        customer_name: string;
+        campaign: {
+            id: string;
+            name: string;
+        };
+        amount: number;
+        commission: number;
+        status: 'pending' | 'approved' | 'rejected' | 'flagged';
+        referral_id: string;
+    }>;
 }
 
-const sales = ref<Sale[]>([
+const props = defineProps<Props>();
+
+// Fall back to sample data if no sales are provided
+const defaultSales = [
     {
-        id: 1,
+        id: "1",
         date: '2024-03-15',
-        affiliate: 'John Doe',
-        customer: 'Maria Johnson',
-        campaign: 'Summer Sale 2024',
+        affiliate: {
+            id: "1",
+            first_name: "John",
+            last_name: "Doe"
+        },
+        customer_name: 'Maria Johnson',
+        campaign: {
+            id: "1",
+            name: 'Summer Sale 2024'
+        },
         amount: 120000,
         commission: 12000,
         status: 'pending',
-        referral_code: 'SUMMER24JD'
+        referral_id: 'SUMMER24JD'
     },
     {
-        id: 2,
+        id: "2",
         date: '2024-03-14',
-        affiliate: 'Jane Smith',
-        customer: 'Alex Thompson',
-        campaign: 'New Product Launch',
+        affiliate: {
+            id: "2",
+            first_name: "Jane",
+            last_name: "Smith"
+        },
+        customer_name: 'Alex Thompson',
+        campaign: {
+            id: "2",
+            name: 'New Product Launch'
+        },
         amount: 85000,
         commission: 8500,
         status: 'pending',
-        referral_code: 'NEWPRODJS'
+        referral_id: 'NEWPRODJS'
     },
     {
-        id: 3,
+        id: "3",
         date: '2024-03-10',
-        affiliate: 'Daniel Mtui',
-        customer: 'Sarah Wilson',
-        campaign: 'Tech Gadgets Promo',
+        affiliate: {
+            id: "3",
+            first_name: "Daniel",
+            last_name: "Mtui"
+        },
+        customer_name: 'Sarah Wilson',
+        campaign: {
+            id: "3",
+            name: 'Tech Gadgets Promo'
+        },
         amount: 150000,
         commission: 15000,
         status: 'approved',
-        referral_code: 'TECHDM20'
+        referral_id: 'TECHDM20'
     },
     {
-        id: 4,
+        id: "4",
         date: '2024-03-08',
-        affiliate: 'Amina Said',
-        customer: 'David Brown',
-        campaign: 'Back to School Sale',
+        affiliate: {
+            id: "4",
+            first_name: "Amina",
+            last_name: "Said"
+        },
+        customer_name: 'David Brown',
+        campaign: {
+            id: "4",
+            name: 'Back to School Sale'
+        },
         amount: 95000,
         commission: 9500,
         status: 'flagged',
-        referral_code: 'SCHOOLAS'
+        referral_id: 'SCHOOLAS'
     },
     {
-        id: 5,
+        id: "5",
         date: '2024-02-28',
-        affiliate: 'James Wilson',
-        customer: 'Emily Davis',
-        campaign: 'Home Essentials',
+        affiliate: {
+            id: "5",
+            first_name: "James",
+            last_name: "Wilson"
+        },
+        customer_name: 'Emily Davis',
+        campaign: {
+            id: "5",
+            name: 'Home Essentials'
+        },
         amount: 75000,
         commission: 7500,
         status: 'rejected',
-        referral_code: 'HOMEJW21'
+        referral_id: 'HOMEJW21'
     }
-]);
+] as Props['sales'];
+
+const sales = ref(props.sales && props.sales.length > 0 ? props.sales : defaultSales);
 
 const searchQuery = ref('');
 const statusFilter = ref('all');
@@ -88,10 +138,10 @@ const filteredSales = computed(() => {
     if (searchQuery.value) {
         const query = searchQuery.value.toLowerCase();
         result = result.filter(sale => 
-            sale.affiliate.toLowerCase().includes(query) || 
-            sale.customer.toLowerCase().includes(query) ||
-            sale.campaign.toLowerCase().includes(query) ||
-            sale.referral_code.toLowerCase().includes(query)
+            `${sale.affiliate.first_name} ${sale.affiliate.last_name}`.toLowerCase().includes(query) || 
+            sale.customer_name.toLowerCase().includes(query) ||
+            sale.campaign.name.toLowerCase().includes(query) ||
+            sale.referral_id.toLowerCase().includes(query)
         );
     }
     
@@ -150,25 +200,16 @@ const formatDate = (dateString: string) => {
     });
 };
 
-const approveSale = (id: number) => {
-    const sale = sales.value.find(s => s.id === id);
-    if (sale) {
-        sale.status = 'approved';
-    }
+const approveSale = (id: string) => {
+    router.post(route('advertiser.verify-sales.approve', { id }));
 };
 
-const rejectSale = (id: number) => {
-    const sale = sales.value.find(s => s.id === id);
-    if (sale) {
-        sale.status = 'rejected';
-    }
+const rejectSale = (id: string) => {
+    router.post(route('advertiser.verify-sales.reject', { id }));
 };
 
-const flagSale = (id: number) => {
-    const sale = sales.value.find(s => s.id === id);
-    if (sale) {
-        sale.status = 'flagged';
-    }
+const flagSale = (id: string) => {
+    router.post(route('advertiser.verify-sales.flag', { id }));
 };
 </script>
 
@@ -266,10 +307,10 @@ const flagSale = (id: number) => {
                                 </TableRow>
                                 <TableRow v-for="sale in filteredSales" :key="sale.id">
                                     <TableCell>{{ formatDate(sale.date) }}</TableCell>
-                                    <TableCell>{{ sale.affiliate }}</TableCell>
-                                    <TableCell>{{ sale.customer }}</TableCell>
-                                    <TableCell>{{ sale.campaign }}</TableCell>
-                                    <TableCell>{{ sale.referral_code }}</TableCell>
+                                    <TableCell>{{ sale.affiliate.first_name }} {{ sale.affiliate.last_name }}</TableCell>
+                                    <TableCell>{{ sale.customer_name }}</TableCell>
+                                    <TableCell>{{ sale.campaign.name }}</TableCell>
+                                    <TableCell>{{ sale.referral_id }}</TableCell>
                                     <TableCell>{{ formatCurrency(sale.amount) }}</TableCell>
                                     <TableCell>{{ formatCurrency(sale.commission) }}</TableCell>
                                     <TableCell>

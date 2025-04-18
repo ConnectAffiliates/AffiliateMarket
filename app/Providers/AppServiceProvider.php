@@ -12,6 +12,9 @@ use App\Services\Contracts\RoleServiceInterface;
 use App\Services\Contracts\PermissionServiceInterface;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
+use App\Services\CampaignService;
+use App\Services\SaleService;
+use App\Services\AffiliateService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +29,18 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(UserServiceInterface::class, UserService::class);
         $this->app->bind(RoleServiceInterface::class, RoleService::class);
         $this->app->bind(PermissionServiceInterface::class, PermissionService::class);
+
+        $this->app->singleton(CampaignService::class, function ($app) {
+            return new CampaignService();
+        });
+        
+        $this->app->singleton(SaleService::class, function ($app) {
+            return new SaleService();
+        });
+        
+        $this->app->singleton(AffiliateService::class, function ($app) {
+            return new AffiliateService();
+        });
     }
 
     /**

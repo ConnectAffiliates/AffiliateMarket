@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import { Head, Link } from '@inertiajs/vue3'
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout.vue'
 import { PageProps } from '@/types'
 import { ref, computed } from 'vue'
@@ -55,7 +55,7 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
 </script>
 
 <template>
-  <Head title="Affiliate Dashboard" />
+    <Head title="Affiliate Dashboard" />
 
   <AuthenticatedLayout>
     <template #header>
@@ -89,6 +89,9 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
             </button>
           </div>
           <div class="flex space-x-3">
+            <Link :href="route('affiliate.sales')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              View All Sales
+            </Link>
             <button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Request Payout
             </button>
@@ -105,7 +108,7 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
                 {{ stats.earnings.growth }}
               </span>
             </div>
-            
+
             <div class="mt-5 grid grid-cols-2 gap-5">
               <div>
                 <dt class="text-sm font-medium text-gray-500 truncate">Total Earnings</dt>
@@ -170,8 +173,8 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
                 </svg>
               </div>
             </div>
-          </div>
-          
+            </div>
+
           <!-- Campaign Grid View -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <div v-for="campaign in filteredCampaigns" :key="campaign.id" class="p-4 sm:p-6">
@@ -299,7 +302,7 @@ const timeRanges = ['Today', 'This Week', 'This Month', 'This Year']
       </div>
     </div>
   </AuthenticatedLayout>
-</template>
+</template> 
 
 <style>
 /* Add any custom styles here if needed */
